@@ -43,6 +43,7 @@ func (v *Vehicle) AddColor(cl string) {
 	v.Color = cl
 }
 
+// Start the program
 func main() {
 	// Create new vehicle
 	f150 := Vehicle{}
@@ -56,5 +57,4 @@ func main() {
 	// Remove year built
 	f150.AddYearBuilt("")
 	fmt.Println(f150)
-
 }
