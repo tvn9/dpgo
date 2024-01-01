@@ -1,4 +1,4 @@
-// Demonstration of Open Close Principle (OCP), and Specification (Enterprise Patter)
+// Demonstration of Open Close Principle (OCP), and Specification (Enterprise Pattern)
 package main
 
 import "fmt"
