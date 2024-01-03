@@ -60,6 +60,14 @@ type SizeSpecification struct {
 	size Size
 }
 
+type AndSpecification struct {
+	first, second Specification
+}
+
+func (spec AndSpecification) IsSatisfied(i *Item) bool {
+	return spec.first.IsSatisfied(i) && spec.second.IsSatisfied(i)
+}
+
 func (c ColorSpecification) IsSatisfied(i *Item) bool {
 	return c.color == i.color
 }
@@ -70,7 +78,7 @@ func (s SizeSpecification) IsSatisfied(i *Item) bool {
 // NewFilter implement a new Filter that will take []Item, and the Specification
 type NewFilter struct{}
 
-func (nf *NewFilter) NFilter(items []Item, spec Specification) []*Item {
+func (nf *NewFilter) Filter(items []Item, spec Specification) []*Item {
 	output := make([]*Item, 0)
 	for i, v := range items {
 		if spec.IsSatisfied(&v) {
@@ -85,21 +93,39 @@ func main() {
 	menShoe1 := Item{"Court Training 1", blackGreen, large}
 	menShoe2 := Item{"Court Training 2", whiteBlue, large}
 	menShoe3 := Item{"Court Training 3", blue, medium}
+	menShoe4 := Item{"Court Training 4", blue, medium}
 
-	menShoes := []Item{menShoe1, menShoe2, menShoe3}
+	menShoes := []Item{menShoe1, menShoe2, menShoe3, menShoe4}
 
 	// Looking for product in blue (Old)_
 	fmt.Println("Search for items in Blue (Old)")
 	f := Filter{}
-	for i, v := range f.FilterByColor(menShoes, blue) {
-		fmt.Printf("%d#, %s is blue\n", i+1, v.name)
+	for _, v := range f.FilterByColor(menShoes, blue) {
+		fmt.Printf(" - %s is blue\n", v.name)
 	}
 
 	// Search for product in BlackGreen (New)
 	fmt.Println("Search for items in black and green (New)")
 	nf := NewFilter{}
 	bg := ColorSpecification{blackGreen}
-	for i, v := range nf.NFilter(menShoes, bg) {
-		fmt.Printf("%d# - %s is black and green\n", i+1, v.name)
+	for _, v := range nf.Filter(menShoes, bg) {
+		fmt.Printf(" - %s is black and green\n", v.name)
 	}
+
+	// Filter product in size large
+	fmt.Println("Filter all product in large")
+	lg := SizeSpecification{large}
+	for _, v := range nf.Filter(menShoes, lg) {
+		fmt.Printf(" - %s is large \n", v.name)
+	}
+
+	// Filter product in blue and medium
+	fmt.Println("Blue and medium items")
+	b := ColorSpecification{blue}
+	m := SizeSpecification{medium}
+	bm := AndSpecification{b, m}
+	for _, v := range nf.Filter(menShoes, bm) {
+		fmt.Printf(" - %s is blue and mideum\n", v.name)
+	}
+
 }

@@ -31,12 +31,15 @@ func (r *Rectangle) SetHeight(h int) {
 }
 
 func UseIt(sized Sized) {
-	width := sized.GetWidth()
+	sized.SetWidth(20)
 	sized.SetHeight(10)
-	expectedArea := 10 * width
+	width := sized.GetWidth()
+	height := sized.GetHeight()
+	expectedArea := height * width
 	actualArea := sized.GetWidth() * sized.GetHeight()
 	fmt.Print("Expected an area of ", expectedArea, ", but got ", actualArea, "\n")
 }
+
 func main() {
 	rc := &Rectangle{2, 3}
 	UseIt(rc)

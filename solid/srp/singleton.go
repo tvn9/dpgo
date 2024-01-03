@@ -1,4 +1,6 @@
-// Demonstration of Singleton pattern
+// Demonstration of OCP and Repository
+// A type should only have one reason to change
+// Separation of concerns - different types/packages handling different, independent tasks/problems
 package main
 
 import "fmt"
