@@ -9,3 +9,7 @@ Student/Developer: Thanh Nguyen
 
 ## Project Nodes
 Useful [project notes](./notes.md) collected during training
+
+## App Screenshots
+
+![Home Page](/static/images/homepage.png)
