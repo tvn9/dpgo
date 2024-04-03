@@ -12,4 +12,4 @@ Useful [project notes](./notes.md) collected during training
 
 ## App Screenshots
 
-![Home Page](/static/images/homepage.png)
+![Home Page](https://github.com/tvn9/dpgo/blob/main/breeders/local/images/homepage.png)
