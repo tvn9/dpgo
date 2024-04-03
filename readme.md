@@ -8,7 +8,8 @@ Professor: Dr. Trevor Sawler Ph.D. University Professor - Computer Science, Engl
 Student/Developer: Thanh Nguyen
 
 ## Project Nodes
-Useful [project notes](./notes.md) collected during training
+Useful coding [notes](./notes.md) collected during training  
+Design Patterns [notes](./dpnotes.md)
 
 ## App Screenshots
 
