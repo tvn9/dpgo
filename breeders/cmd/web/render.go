@@ -42,14 +42,14 @@ func (a *application) render(w http.ResponseWriter, t string, td *appData) {
 
 func (a *application) createTemplate(t string) (*template.Template, error) {
 	templateSlice := []string{
-		"./templates/base.gohtml",
-		"./templates/header.gohtml",
-		"./templates/navbar.gohtml",
-		"./templates/footer.gohtml",
-		"./templates/index.gohtml",
-		"./templates/contact.gohtml",
-		"./templates/about.gohtml",
-		"./templates/login.gohtml",
+		"./templates/base.html",
+		"./templates/header.html",
+		"./templates/navbar.html",
+		"./templates/footer.html",
+		"./templates/index.html",
+		"./templates/contact.html",
+		"./templates/about.html",
+		"./templates/login.html",
 		"./templates/" + t,
 	}
 

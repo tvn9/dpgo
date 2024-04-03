@@ -1,7 +1,6 @@
 body {
    margin: 0;
    padding: 0;
-   background-color: aqua;
 }
 
 h1 {
@@ -10,4 +9,35 @@ h1 {
 
 h2 {
    font-size: 40px;
+}
+
+.navbar {
+   display: flex;
+   background-color: #191a1b;
+   margin: 0;
+   padding: 10px 30px;
+}
+
+.navbar a {
+   color: #ffffff;
+   margin: 10px 20px 0 0;
+   text-decoration: none;
+}
+
+.dropdown {
+   display: inline-block;
+}
+
+.dropdown-items {
+   display: none;
+   position: absolute;
+   min-width: 100px;
+   z-index: 1;
+}
+
+.dropdown:hover .dropdown-items {
+   display: flex;
+   flex-direction: column;
+   background-color: #232323e4;
+   padding: 10px;
 }
