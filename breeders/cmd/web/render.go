@@ -11,6 +11,7 @@ type appData struct {
 	Data map[string]any
 }
 
+// render reads template from dish or from memory map
 func (a *application) render(w http.ResponseWriter, t string, td *appData) {
 	var tmpl *template.Template
 
@@ -40,6 +41,7 @@ func (a *application) render(w http.ResponseWriter, t string, td *appData) {
 	}
 }
 
+// createTemplate parses template files and save the list to map
 func (a *application) createTemplate(t string) (*template.Template, error) {
 	templateSlice := []string{
 		"./templates/base.html",
