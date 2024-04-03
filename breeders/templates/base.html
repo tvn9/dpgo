@@ -8,15 +8,20 @@
 {{end}}
 
 <body>
-   {{block "nav" .}}
-   {{end}}
+   <div class="container">
 
-   {{block "content" .}}
-   {{end}}
+      {{block "nav" .}}
+      {{end}}
 
-   {{block "footer" .}}
-   {{end}}
+      {{block "content" .}}
+      {{end}}
 
+      <div class="base-footer">
+         {{block "footer" .}}
+         {{end}}
+      </div>
+
+   </div>
    {{block "js" .}}
    {{end}}
 </body>
