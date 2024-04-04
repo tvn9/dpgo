@@ -50,7 +50,7 @@ func main() {
 
    // update product name 
 	func(t *products.Product) {
-		t.ProductName = "Totota Tundra"
+		t.ProductName = "Toyota Tundra"
 		t.UpdatedAt = time.Now()
 	}(tundra)
 

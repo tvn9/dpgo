@@ -1,4 +1,6 @@
-.hero {}
+.hero {
+   width: 100%;
+}
 
 .hero-image {
    display: flex;
@@ -7,7 +9,7 @@
    background: url("/static/images/catdog.avif") no-repeat center;
    background-size: contain;
    width: auto;
-   height: 80vh;
+   height: 70vh;
    text-align: center;
 }
 
@@ -19,6 +21,11 @@
 }
 
 .footer-content {
-   width: 100%;
+   position: absolute;
+   bottom: fixed;
+   width: 90%;
+   height: 3rem;
+   margin: 0 auto;
    text-align: center;
+   /* background: #b1b1b1; */
 }
